@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Your Bus</title>
+    <link rel="stylesheet" href="../css/searchbus.css">
+    <script src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126746.60952942054!2d79.8384413085927!3d6.910735772106806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2572088a0a727%3A0x7ad194975392a569!2sHorizon%20Campus!5e0!3m2!1sen!2slk!4v1723653989742!5m2!1sen!2slk"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="####">Menu</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="searchbus.html"> Bus tracker</a></li>
+            <li><a href="contactus.html"> Contact Us</a></li>
+            <li><a href="helpinfo.html"> Help & info</a></li>
+            <li><a href="login.html">Log Out</a></li>
+        </ul>
+    </nav>
+    <h2>Search Your Bus</h2>
+    <form>
+        <label for="bus-number">Enter Bus Number:</label>
+        <input type="text" id="bus-number" placeholder="Bus Number" required>
+        <button type="button" onclick="searchBus()">Search</button>
+    </form>
+
+    <!-- Message area for displaying status -->
+    <div id="search-status" style="color:blue; margin-top:10px;"></div>
+
+    <div class="map">
+        <h2>Find Your bus Route here</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126746.60952942054!2d79.8384413085927!3d6.910735772106806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2572088a0a727%3A0x7ad194975392a569!2sHorizon%20Campus!5e0!3m2!1sen!2slk!4v1723653989742!5m2!1sen!2slk" width="800" height="700" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div id="bus-info">
+        <p>Arrival Time: <span id="arrival-time"></span></p>
+        <p>Number of Stops: <span id="stop-count"></span></p>
+        <p>Emergency Contact: <span id="emergency-contact"></span></p>
+    </div>
+
+    <script>
+        function searchBus() {
+            // Display the "Searching" message
+            document.getElementById('search-status').innerHTML = 'Searching for your bus...';
+
+            // Simulate the search delay (for demonstration purposes)
+            setTimeout(() => {
+                // Replace with logic to display bus route and arrival time
+                document.getElementById('search-status').innerHTML = 'Bus details found!';
+                
+                // Example: Display some mock data
+                document.getElementById('arrival-time').innerText = '15:30';
+                document.getElementById('stop-count').innerText = '5';
+                document.getElementById('emergency-contact').innerText = '+94 71 123 4567';
+            }, 2000); // Simulate a 2-second delay
+        }
+        window.onload = initMap;
+    </script>
+</body>
+</html>

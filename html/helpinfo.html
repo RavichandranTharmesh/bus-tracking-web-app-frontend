@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & Info </title>
+    <link rel="stylesheet" href="../css/helpinfo.css"> 
+</head>
+<body>
+    <div class="container">
+        <h1>Help & Info</h1>
+        <nav class="navbar">
+            <div class="logo">
+                <a>Menu</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="searchbus.html"> Bus tracker</a></li>
+                <li><a href="contactus.html"> Contact Us</a></li>
+                <li><a href="helpinfo.html"> Help & info</a></li>
+                <li><a href="login.html">Log Out</a></li>
+            </ul>
+        </nav>
+
+        <!-- Section -->
+        <div class="section">
+            <h2>How the Bus Tracking System Works</h2>
+            <p>Our system provides real-time GPS tracking for buses. You can find your bus's current location, view estimated arrival times, and get route information. Use the app to plan your trip and reduce waiting times at bus stops.</p>
+        </div>
+
+        <!-- Troubleshooting -->
+        <div class="section">
+            <h2>Troubleshooting Tips</h2>
+            <p>If you’re facing issues with the web app, try the following steps:</p>
+            <ul>
+                <li><strong>GPS not updating:</strong> Ensure your phone's location services are enabled, and you have a stable internet connection.</li>
+                <li><strong>Bus not appearing:</strong> If the bus you’re tracking doesn’t show, it may be due to a technical issue or the bus may be off-route. Contact customer support if the issue persists.</li>
+                <li><strong>Slow app performance:</strong> Try closing other function running in the background.</li>
+            </ul>
+        </div>
+
+        <!-- App Usage Guide -->
+        <div class="section">
+            <h2>web App Usage Guide</h2>
+            <p>Here’s a step-by-step guide to using our bus tracking system:</p>
+            <ol>
+                <li>Enter your bus number in the search bar.</li>
+                <li>View the real-time location and the estimated arrival time.</li>
+                <li>Track the number of stops remaining before your destination.</li>
+                <li>Enable push notifications to receive alerts when the bus is approaching your stop.</li>
+            </ol>
+        </div>
+
+        <!-- Customer Feedback -->
+        <div class="section">
+            <h2>Customer Feedback</h2>
+            <p>We value your feedback. Please share your thoughts on our services and suggest improvements. You can also report any issues you experienced using the app.</p>
+            <a href="https://www.busfinding.com/feedback" class="feedback-link">Submit Feedback</a>
+        </div>
+
+        <!-- Contact Us for Emergencies -->
+        <div class="section">
+            <h2>Contact Us for Emergencies</h2>
+            <p>If you encounter any emergencies during your journey, call our 24/7 emergency hotline at <strong>+94776567890</strong>. Our team is here to assist you immediately.</p>
+        </div>
+
+        <!-- Live Chat Support -->
+        <div class="chat-box">
+            <h2>Live Chat Support</h2>
+            <p>Need further assistance? Chat with one of our representatives right here:</p>
+
+            <div id="chat-window">
+                <div id="chat-output"></div>
+            </div>
+
+            <div class="chat-input">
+                <input type="text" id="chat-message" placeholder="Type your message here..." />
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Chat functionality
+        function sendMessage() {
+            const message = document.getElementById('chat-message').value;
+            const chatOutput = document.getElementById('chat-output');
+            if (message.trim() !== "") {
+                const newMessage = document.createElement('div');
+                newMessage.classList.add('user-message');
+                newMessage.innerHTML = `<strong>You:</strong> ${message}`;
+                chatOutput.appendChild(newMessage);
+
+                // Clear the input field
+                document.getElementById('chat-message').value = "";
+
+                // Simulate company response (for demo purposes)
+                setTimeout(() => {
+                    const companyMessage = document.createElement('div');
+                    companyMessage.classList.add('company-message');
+                    companyMessage.innerHTML = `<strong>Bus Tracker Support:</strong> Thank you for your message. Our team will get back to you shortly.`;
+                    chatOutput.appendChild(companyMessage);
+
+                    // Scroll chat to the bottom
+                    chatOutput.scrollTop = chatOutput.scrollHeight;
+                }, 1000);
+            }
+        }
+    </script>
+</body>
+</html>
